@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_subscriptions",
+  "info": {
+    "singularName": "email-subscription",
+    "pluralName": "email-subscriptions",
+    "displayName": "Email Subscription"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    }
+  }
+}

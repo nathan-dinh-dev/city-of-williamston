@@ -362,68 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiEmailSubcribeEmailSubcribe extends Schema.CollectionType {
-  collectionName: 'email_subcribes';
-  info: {
-    singularName: 'email-subcribe';
-    pluralName: 'email-subcribes';
-    displayName: 'Email Subcribe';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    email: Attribute.Email;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::email-subcribe.email-subcribe',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::email-subcribe.email-subcribe',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSearchContentSearchContent extends Schema.CollectionType {
-  collectionName: 'search_contents';
-  info: {
-    singularName: 'search-content';
-    pluralName: 'search-contents';
-    displayName: 'Search Content';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    link: Attribute.String;
-    description: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::search-content.search-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::search-content.search-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -739,6 +677,68 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiEmailSubcribeEmailSubcribe extends Schema.CollectionType {
+  collectionName: 'email_subcribes';
+  info: {
+    singularName: 'email-subcribe';
+    pluralName: 'email-subcribes';
+    displayName: 'Email Subcribe';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::email-subcribe.email-subcribe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::email-subcribe.email-subcribe',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSearchContentSearchContent extends Schema.CollectionType {
+  collectionName: 'search_contents';
+  info: {
+    singularName: 'search-content';
+    pluralName: 'search-contents';
+    displayName: 'Search Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    link: Attribute.String;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::search-content.search-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::search-content.search-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -749,14 +749,14 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::email-subcribe.email-subcribe': ApiEmailSubcribeEmailSubcribe;
-      'api::search-content.search-content': ApiSearchContentSearchContent;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::email-subcribe.email-subcribe': ApiEmailSubcribeEmailSubcribe;
+      'api::search-content.search-content': ApiSearchContentSearchContent;
     }
   }
 }
