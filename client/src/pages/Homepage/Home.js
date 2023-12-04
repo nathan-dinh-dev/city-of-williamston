@@ -19,7 +19,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    let selector = document.querySelector(`.${styles["scroll-container"]}`);
+    let selector = document.querySelector("#home-page");
     selector.addEventListener("scroll", () => {
       if (selector.scrollTop >= 900) setIsTransparent(true);
       else setIsTransparent(false);
@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={styles["scroll-container"]}>
+    <div id="home-page" className={styles["scroll-container"]}>
       <ToastContainer />
       <Header
         className={isTransparent || !introCode ? "navbar-bg" : "hover-navbar"}
