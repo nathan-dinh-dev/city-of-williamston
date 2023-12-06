@@ -51,14 +51,15 @@ const ContactMe = () => {
         message,
       };
       setBool(true);
-      // For local develop
-      // const res = await axios.post("http://localhost:5000/contact", data);
+      // For local development
+      const res = await axios.post("http://localhost:5000/contact", data);
 
       // For production mode
-      const res = await axios.post(
-        "https://mailing-server-f0y5.onrender.com/contact",
-        data
-      );
+      // const res = await axios.post(
+      //   "https://mailing-server-f0y5.onrender.com/contact",
+      //   data
+      // );
+
       console.log(res);
       if (name.length === 0 || email.length === 0 || message.length === 0) {
         setBanner(res.data.msg);
