@@ -1,7 +1,11 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:1337/api/",
+  //Local development
+  //baseURL: "http://localhost:1337/api/",
+
+  //Production purpose
+  baseURL: "https://strapi-api-1exy.onrender.com/api",
 });
 
 export const getContents = async () => {
@@ -25,7 +29,18 @@ export const pushSubcribes = (email) => {
     }),
   };
 
-  fetch("http://localhost:1337/api/email-subcribes", requestOptions)
+  //Local development
+  // fetch("http://localhost:1337/api/email-subcribes", requestOptions)
+  //   .then((res) => res.json())
+  //   .then((res) => {
+  //     console.log(res);
+  //   });
+
+  // Production purposes
+  fetch(
+    "https://strapi-api-1exy.onrender.com/api/email-subscriptions",
+    requestOptions
+  )
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
